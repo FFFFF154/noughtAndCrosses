@@ -29,10 +29,46 @@ public class test  {
     }
 
     public static void botTurn(){
+        int x2, y2;
+        for (int i=0; i<SIZE_DESK-1;i++){
+            for (int j=0; j<SIZE_DESK-1; j++){
+                if (desk[i][j] == desk[i][j+1] && j == 0 && desk[i][j] != 0){
+                    desk[i][j+2] = 2;
+                    break;
+                } else if (desk[i][j] == desk[i][j+1] && j == 1 && desk[i][j] != 0){
+                    desk[i][j-1] = 2;
+                    break;
+                }
+                if (desk[i][j] == desk[i+1][j] && i == 0 && desk[i][j] != 0){
+                    desk[i+2][j] = 2;
+                    break;
+                } else if(desk[i][j] == desk[i+1][j] && i == 1 && desk[i][j] != 0){
+                    desk[i-1][j] = 2;
+                    break;
+                }
+            }
+        }
+
         if (desk[1][1] != 1 && (desk[1][1] != 2)){
             desk[1][1] = 2;
         } else {
+            while (true){
+                if (Math.random()*2 > 1){
+                    x2 = 2;
+                } else{
+                    x2 = 0;
+                }
+                if (Math.random()*2 > 1){
+                    y2 = 2;
+                } else{
+                    y2 = 0;
+                }
+                if (desk[x2][y2] != 1 && desk[x2][y2] != 2){
+                    desk[x2][y2] = 2;
+                    break;
+                }
 
+            }
         }
         printDesk();
     }
