@@ -85,7 +85,7 @@ public static final int SIZE_DESK = 3;
         }
         return false;
     }
-
+//
     public static boolean checkWin(){
         for (int i=0; i<SIZE_DESK; i++){
             if ((desk[i][0] == desk[i][1]) && (desk[i][0] == desk[i][2]) && (desk[i][0] != ' ')){
